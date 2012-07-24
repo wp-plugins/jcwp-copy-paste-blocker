@@ -25,10 +25,10 @@
     function jcorgcpb_activate() {
             add_option('jcorgcpb_alert','disable');
             add_option('jcorgcpb_alert_message','Content copy is disabled on this site.');
-            add_option('jcorgcpb_use_css','enable');
-            add_option('jcorgcpb_disable_selection','enable');
-            add_option('jcorgcpb_disable_right_mouse_click',"enable");
-            add_option('jcorgcpb_disable_keys',"enable");
+            add_option('jcorgcpb_use_css','disable');
+            add_option('jcorgcpb_disable_selection','disable');
+            add_option('jcorgcpb_disable_right_mouse_click',"disable");
+            add_option('jcorgcpb_disable_keys',"disable");
             add_option('jcorgcpb_where_on',"everywhere");
             add_option('jcorgcpb_linkback',"no");
     }
