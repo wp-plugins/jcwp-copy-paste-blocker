@@ -3,8 +3,8 @@
     Plugin Name: jcwp copy paste blocker
     Plugin URI: http://jaspreetchahal.org/wordpress-copy-paste-protection-blocker-plugin
     Description: This plugin blocks text selections and right clicks on your blog pages and posts.
-    Author: Jaspreet Chahal
-    Version: 1.0
+    Author: jaschahal
+    Version: 1.1
     Author URI: http://jaspreetchahal.org
     License: GPLv2 or later
     */
@@ -96,11 +96,15 @@
          
         <?php
         }
-        if(get_option('jcorgcpb_linkback') =="Yes") {
-            echo '<a style="font-size:0em !important;color:transparent !important" href="http://jaspreetchahal.org">Content protection is powered by http://jaspreetchahal.org</a>';
-        }
     }
     
+    add_action('wp_footer','jcorgcpb_incl_link',100);
+	function jcorgcpb_incl_link() {		
+        if(get_option('jcorgcpb_linkback') =="Yes") {
+            echo '<a style="font-size:0em !important;color:transparent !important;display:block !important;width:1px;height:1px" href="http://jaspreetchahal.org">Content protection is powered by http://jaspreetchahal.org</a>';
+        }	
+	}
+   
     function jcorgcpb_plugin_options() {
         jcorgcpbDonationDetail();           
         ?> 
