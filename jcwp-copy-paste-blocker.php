@@ -101,7 +101,7 @@
     add_action('wp_footer','jcorgcpb_incl_link',100);
 	function jcorgcpb_incl_link() {		
         if(get_option('jcorgcpb_linkback') =="Yes") {
-            echo '<a style="font-size:0em !important;color:transparent !important;display:block !important;width:1px;height:1px" href="http://jaspreetchahal.org">Content protection is powered by http://jaspreetchahal.org</a>';
+            echo '<a style="font-size:0em !important;color:transparent !important;display:block !important;width:1px;height:1px;overflow:none" href="http://jaspreetchahal.org">Content protection is powered by http://jaspreetchahal.org</a>';
         }	
 	}
    
