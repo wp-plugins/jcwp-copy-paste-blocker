@@ -100,10 +100,10 @@
     }
 
     add_action('wp_footer','jcorgcpb_incl_link',100);
-	function jcorgcpb_incl_link() {		
+	function jcorgcpb_incl_link() {
         if(get_option('jcorgcpb_linkback') =="Yes") {
                 $link_text = array("content protection is powered by http://jaspreetchahal.org","Copy past blocker is powered by http://jaspreetchahal.org","Wordpress Content Protection plugin","Content protection plugin for Wordpress","Copy Paste blocker plugin by jaspreetchahal.org","content protection plugin by http://jaspreetchahal.org","Text selection is disabled by content protection wordpress plugin","Wordpress Copy paste blocker plugin powered by http://jaspreetchahal.org","Right click disabler plugin by jaspreetchahal.org","Disable mouse on posts and pages plugin by jaspreetchahal.org","Content Copy Blocking powered by http://jaspreetchahal.org","Wordpress Content Copy blocker plugin by JaspreetChahal.org","Block selection by mouse plugin by JaspreetChahal.org","Disable content selection plugin by JaspreetChahal.org","Wordpress contect selection blocker plugin by JaspreetChahal.org","Copy disable plugin powerered by JaspreetChahal.org","WordPress copy disable plugin by JaspreetChahal.org","Wordpress content guard plugin","Wordpress content guard plugin by JaspreetChahal.org","Wordpress content guard powered by JaspreetChahal.org","Content security powered by JaspreetChahal.org","Content security powered by Jaspreet Chahal");
-                if(get_option("jcorgcpb_linkback_text") === FALSE || get_option("jcorgytce_linkback_text") == "") {
+                if(get_option("jcorgcpb_linkback_text") === FALSE || get_option("jcorgcpb_linkback_text") == "") {
                     add_option("jcorgcpb_linkback_text","");
                     update_option("jcorgcpb_linkback_text",$link_text[rand(0,count($link_text)-1)]);
                 }
