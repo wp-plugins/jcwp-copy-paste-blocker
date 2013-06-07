@@ -4,9 +4,9 @@ Plugin URI: http://jaspreetchahal.org/wordpress-copy-paste-protection-blocker-pl
 Donate link:  http://jaspreetchahal.org/wordpress-copy-paste-protection-blocker-plugin
 Tags: content protection, block selection, disable right click, disable content selection
 Requires at least: 2.8
-Version: 1.1
-Tested up to: 3.4.1
-Stable tag: 1.1
+Version: 1.3
+Tested up to: 3.5.1
+Stable tag: 1.3
 
 This plugin blocks text selections and right clicks on your blog pages and posts.
 
@@ -33,6 +33,9 @@ Visit my site http://jaspreetchahal.org to get help on this plugin or more preci
 
 = 1.1.0 =
 * Fixed linkback issue
+
+= 1.3.0 =
+* Wordpress 3.5.x tested
 
 == Screenshots ==-
 

@@ -4,7 +4,7 @@
     Plugin URI: http://jaspreetchahal.org/wordpress-copy-paste-protection-blocker-plugin
     Description: This plugin blocks text selections and right clicks on your blog pages and posts.
     Author: jaschahal
-    Version: 1.1
+    Version: 1.3
     Author URI: http://jaspreetchahal.org
     License: GPLv2 or later
     */
@@ -38,7 +38,8 @@
         add_options_page('JCWP CopyPaste Blocker', 'JCWP CopyPaste Blocker', 'manage_options', 'jcorgcpb-plugin', 'jcorgcpb_plugin_options');
     }
     add_action('admin_init','jcorgcpb_regsettings');
-    function jcorgcpb_regsettings() {        
+    function jcorgcpb_regsettings() {
+        add_option("jcorgcpb_linkback_text","");
         register_setting("jcorgcpb-setting","jcorgcpb_alert");
         register_setting("jcorgcpb-setting","jcorgcpb_alert_message");
         register_setting("jcorgcpb-setting","jcorgcpb_use_css");
@@ -97,12 +98,17 @@
         <?php
         }
     }
-    
+
     add_action('wp_footer','jcorgcpb_incl_link',100);
 	function jcorgcpb_incl_link() {		
         if(get_option('jcorgcpb_linkback') =="Yes") {
-            echo '<a style="font-size:0em !important;color:transparent !important;display:block !important;width:1px;height:1px;overflow:hidden" href="http://jaspreetchahal.org">Content protection is powered by http://jaspreetchahal.org</a>';
-        }	
+                $link_text = array("content protection is powered by http://jaspreetchahal.org","Copy past blocker is powered by http://jaspreetchahal.org","Wordpress Content Protection plugin","Content protection plugin for Wordpress","Copy Paste blocker plugin by jaspreetchahal.org","content protection plugin by http://jaspreetchahal.org","Text selection is disabled by content protection wordpress plugin","Wordpress Copy paste blocker plugin powered by http://jaspreetchahal.org","Right click disabler plugin by jaspreetchahal.org","Disable mouse on posts and pages plugin by jaspreetchahal.org","Content Copy Blocking powered by http://jaspreetchahal.org","Wordpress Content Copy blocker plugin by JaspreetChahal.org","Block selection by mouse plugin by JaspreetChahal.org","Disable content selection plugin by JaspreetChahal.org","Wordpress contect selection blocker plugin by JaspreetChahal.org","Copy disable plugin powerered by JaspreetChahal.org","WordPress copy disable plugin by JaspreetChahal.org","Wordpress content guard plugin","Wordpress content guard plugin by JaspreetChahal.org","Wordpress content guard powered by JaspreetChahal.org","Content security powered by JaspreetChahal.org","Content security powered by Jaspreet Chahal");
+                if(get_option("jcorgcpb_linkback_text") === FALSE || get_option("jcorgytce_linkback_text") == "") {
+                    add_option("jcorgcpb_linkback_text","");
+                    update_option("jcorgcpb_linkback_text",$link_text[rand(0,count($link_text)-1)]);
+                }
+                echo '<a style="margin-left:45%;color:#f1f1f1;font-size:0.1em !important;" href="http://jaspreetchahal.org">'.get_option("jcorgcpb_linkback_text").'</a>';
+            }
 	}
    
     function jcorgcpb_plugin_options() {
