@@ -4,7 +4,7 @@
     Plugin URI: http://jaspreetchahal.org/wordpress-copy-paste-protection-blocker-plugin
     Description: This plugin blocks text selections and right clicks on your blog pages and posts.
     Author: jaschahal
-    Version: 1.3
+    Version: 1.3.1
     Author URI: http://jaspreetchahal.org
     License: GPLv2 or later
     */
